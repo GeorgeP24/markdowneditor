@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>default.md</file>
+        <file>index.html</file>
+        <file>3rdparty/markdown.css</file>
+        <file>3rdparty/MARKDOWN-LICENSE.txt</file>
+        <file>3rdparty/MARKED-LICENSE.txt</file>
+        <file>3rdparty/marked.js</file>
+        <file>3rdparty/qt_attribution.json</file>
+    </qresource>
+</RCC>
