@@ -60,7 +60,14 @@
         </sizepolicy>
        </property>
       </widget>
-      <widget class="QListWidget" name="list"/>
+      <widget class="QListWidget" name="list">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>

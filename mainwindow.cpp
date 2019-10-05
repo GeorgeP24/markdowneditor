@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->splitter->setStretchFactor(0,4);
     ui->splitter->setStretchFactor(1,4);
-    ui->splitter->setStretchFactor(2,2);
+    ui->splitter->setStretchFactor(2,1);
 
     Preview *page = new Preview(this);
     ui->preview->setPage(page);
@@ -60,7 +60,7 @@ void MainWindow::on_actNew_triggered()
 {
     if (isModified()) {
         QMessageBox::StandardButton button = QMessageBox::question(this, windowTitle(),
-                                                                   tr("文档发生了修改,需要保存么?"),QMessageBox::Cancel | QMessageBox::No, QMessageBox::Yes);
+                                                                   tr("文档发生了修改,需要保存么?"),QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes);
         if (button == QMessageBox::Yes) saveFile();
         else if (button == QMessageBox::Cancel) return;
     }
@@ -79,7 +79,7 @@ void MainWindow::on_actOpen_triggered()
 {
     if (isModified()) {
         QMessageBox::StandardButton button = QMessageBox::question(this, windowTitle(),
-                                                                   tr("文档发生了修改,需要保存么?"),QMessageBox::Cancel | QMessageBox::No, QMessageBox::Yes);
+                                                                   tr("文档发生了修改,需要保存么?"),QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes);
         if (button == QMessageBox::Yes) saveFile();
         else if (button == QMessageBox::Cancel) return;
     }
@@ -123,7 +123,7 @@ void MainWindow::openTextByIODevice(const QString &fileName)
 
 void MainWindow::saveFileAs(){
     QString path = QFileDialog::getSaveFileName(this,
-                                                tr("markdown文档保存"), "..", tr("(*.md, *.markdown)"));
+                                                tr("markdown文档保存"), "..", tr("(*.md *.markdown)"));
     if (path.isEmpty()) return;
     m_filePath = path;
     saveFile();
@@ -155,21 +155,13 @@ void MainWindow::saveFile()
 
 void MainWindow::addFileName()
 {
-    QListWidgetItem *item = new QListWidgetItem;
-    item->setText(m_filePath);
-    qDebug()<<"first"<<item->text();
-//   foreach(QListWidgetItem it,ui->list)
-//    {
-//        if(item->text()==it.text()) return;
-//    }
+    QListWidgetItem *it = new QListWidgetItem;
+    it->setText(m_filePath);
    for (int i = 0;i<ui->list->count();i++)
    {
-       qDebug()<<"for test" << i;
-       if(item->text()==ui->list->item(i)->text()) return;
+       if(it->text()==ui->list->item(i)->text()) return;
    }
-   qDebug()<<item->text();
-    ui->list->addItem(item);
-    delete item;
+    ui->list->addItem(it);
 }
 
 

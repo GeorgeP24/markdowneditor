@@ -22,7 +22,6 @@ private slots:
     void on_actSave_triggered();
     void on_actSaveAs_triggered();
     void on_actNew_triggered();
-
     void on_list_itemClicked(QListWidgetItem *item);
 
 private:
