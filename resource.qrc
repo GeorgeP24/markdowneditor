@@ -7,5 +7,6 @@
         <file>3rdparty/MARKED-LICENSE.txt</file>
         <file>3rdparty/marked.js</file>
         <file>3rdparty/qt_attribution.json</file>
+        <file>3rdparty/sspai.css</file>
     </qresource>
 </RCC>

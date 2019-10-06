@@ -21,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->editor->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
     ui->preview->setContextMenuPolicy(Qt::NoContextMenu);
 
-    ui->splitter->setStretchFactor(0,4);
-    ui->splitter->setStretchFactor(1,4);
+    ui->splitter->setStretchFactor(0,2);
+    ui->splitter->setStretchFactor(1,7);
     ui->splitter->setStretchFactor(2,1);
 
     Preview *page = new Preview(this);
